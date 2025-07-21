@@ -3,23 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="shortcut icon" href="" type="image/x-icon">
+  <meta name="description" content="MALVIN-XD Session Management - Access QR codes, pairing codes, and more.">
+  <title>MALVIN-XD Session</title>
+  <link rel="shortcut icon" href="https://files.catbox.moe/39z8jd.jpg" type="image/jpeg">
+  <!-- Schema.org for SEO -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MALVIN-XD",
+      "url": "https://github.com/XdKing2/MALVIN-XD",
+      "logo": "https://files.catbox.moe/39z8jd.jpg"
+    }
+  </script>
   <style>
-    body {
-      background-color: black;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
+    * {
+      box-sizing: border-box;
       margin: 0;
-      color: white;
+      padding: 0;
     }
 
-    {
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "url": "https://railway.app",
-            "logo": "https://files.catbox.moe/39z8jd.jpg"
+    body {
+      background-color: #000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      line-height: 1.6;
     }
 
     .button-container {
@@ -27,105 +40,126 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      gap: 15px;
+      padding: 20px;
+      max-width: 400px;
+      width: 100%;
     }
 
     h3 {
-      margin-top: -40px;
+      font-size: 1.8rem;
+      margin-bottom: 20px;
       opacity: 0;
-      animation: fadeIn 3s forwards;
+      animation: fadeIn 2s ease-in forwards;
     }
 
     .button {
-      width: 140px;
-      height: 40px;
+      width: 160px;
+      height: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 0px 15px;
-      background-color: red;
-      border-radius: 10px;
+      gap: 8px;
+      padding: 0 20px;
+      background: linear-gradient(0deg, #1a1a1a, #333);
+      border-radius: 8px;
       border: none;
-      color: white;
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
       position: relative;
       cursor: pointer;
-      font-weight: 900;
-      transition-duration: .2s;
-      background: linear-gradient(0deg, #000, #272727);
-      text-decoration: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-  
-    footer {
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    background-color: #222; /* Darker gray footer background */
-    color: #fff;
-    padding: 10px 0;
-    text-align: center;
-    font-size: 14px;
-    
-  }
+    .button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    }
+
     .button:before, .button:after {
       content: '';
       position: absolute;
       left: -2px;
       top: -2px;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #48ff00, #15ff00, #000000,#000000, #ff0000);
+      border-radius: 8px;
+      background: linear-gradient(45deg, #ff0000, #ff4d00, #000, #00ff00);
       background-size: 400%;
       width: calc(100% + 4px);
       height: calc(100% + 4px);
       z-index: -1;
-      animation: steam 10s linear infinite;
-    }
-
-    @keyframes steam {
-      0% {
-        background-position: 0 0;
-      }
-
-      50% {
-        background-position: 400% 0;
-      }
-
-      100% {
-        background-position: 0 0;
-      }
+      animation: steam 8s linear infinite;
     }
 
     .button:after {
-      filter: blur(50px);
+      filter: blur(20px);
     }
 
     .button span {
       z-index: 1;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 0.85rem;
+      margin: 15px 0;
+      color: #ccc;
+    }
+
+    footer {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-color: #1a1a1a;
+      color: #fff;
+      padding: 10px 0;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    @keyframes steam {
+      0% { background-position: 0 0; }
+      50% { background-position: 400% 0; }
+      100% { background-position: 0 0; }
     }
 
     @keyframes fadeIn {
-      to {
-        opacity: 1;
+      to { opacity: 1; }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      .button-container {
+        padding: 15px;
+      }
+      h3 {
+        font-size: 1.5rem;
+      }
+      .button {
+        width: 140px;
+        height: 40px;
+        font-size: 0.8rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="button-container">
-    <h3> MALVIN SESSION</h3>
-    <div></div>
-    <a href="/qr" class="button" target="_blank"> <span>QR-CODE</span> </a> <br>
-    <a href="/pair" class="button" target="_blank"> <span>PAIRING-CODE</span> </a> <br>
-    <a href="https://github.com/XdKing2/MALVIN-XD/fork" class="button" target="_blank"> <span>FORK MALVIN XD</span> </a> <br> </a>
-    <a href="https://whatsapp.com/channel/0029VbA6MSYJUM2TVOzCSb2A" class="button" target="_blank"> <span>WhatsApp</span> </a> <br>
-
-    <p>HAVE ANY ERROR CLICK ERROR BUTTON</p>
-
-    <a href="https://wa.me/263780166288" class="button" target="_blank"> <span>ERROR</span> </a> <br>
-
-    <footer>
-     MALVIN &copy; <span id="currentYear"></span>
-    </footer>
-  
+  <main class="button-container">
+    <h3>MALVIN-XD Session</h3>
+    <a href="/qr" class="button" target="_blank" aria-label="Generate QR Code"><span>QR Code</span></a>
+    <a href="/pair" class="button" target="_blank" aria-label="Get Pairing Code"><span>Pairing Code</span></a>
+    <a href="https://github.com/XdKing2/MALVIN-XD/fork" class="button" target="_blank" aria-label="Fork MALVIN-XD on GitHub"><span>Fork MALVIN-XD</span></a>
+    <a href="https://whatsapp.com/channel/0029VbB3YxTDJ6H15SKoBv3S" class="button" target="_blank" aria-label="Join WhatsApp Channel"><span>WhatsApp</span></a>
+    <p>Got an issue? Hit the error button!</p>
+    <a href="https://wa.me/263714757857" class="button" target="_blank" aria-label="Report an Error via WhatsApp"><span>Error</span></a>
+  </main>
+  <footer>
+    MALVIN-XD © <span id="currentYear"></span>
+  </footer>
+  <script>
+    // Auto-update footer year
+    document.getElementById('currentYear').textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
